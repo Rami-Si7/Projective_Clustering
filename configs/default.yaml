@@ -1,0 +1,30 @@
+name: default_run
+steps:
+  - em_parse
+  - compute_dist
+
+em_parse:
+  source: /home/alaa/Desktop/data/FFHQ/images/
+  n_comps: 100
+  n_samples: 2500
+  n_test: 100
+  img_size: [128, 128]
+  train_from: null
+  test_from: null
+  test_data: null
+  em_j: 100
+  em_k: 5
+  em_steps: 20
+  em_objective: lp
+  em_num_inits: 10
+  em_jitter: 1e-6
+  em_patience: 5
+  em_min_delta: 0.0
+  em_lambda: 1.0
+  seed: null
+  output_dir: null
+
+compute_dist:
+  art_dir: null  # Will use output from em_parse if not specified
+  split: auto  # auto/both evaluate both train and test splits
+  out: null
